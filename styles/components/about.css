@@ -1,0 +1,14 @@
+
+.about{
+    display: flex;
+    text-align: center;
+}
+
+
+.about img{
+    border-radius: 50%;
+}
+
+.links{
+    color:var(--clrGbHeader);
+}

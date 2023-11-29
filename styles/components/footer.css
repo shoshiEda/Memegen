@@ -1,0 +1,10 @@
+
+footer{
+    background-color: var(--clrGbHeader);
+    color: var(--clrPrimary1);
+    text-align: center;
+}
+
+footer .logo{
+    margin-left: 0;
+}

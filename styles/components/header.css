@@ -1,0 +1,37 @@
+
+header{
+    background-color: var(--clrGbHeader);
+    color: var(--clrPrimary1);
+    height: 4.5em;
+
+
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.logo{
+    color: var(--clrPrimary2);
+    margin-left: 1.5em;
+
+
+}
+
+
+.header-buttons button{
+    height: 4.5em;
+    border: none;
+    background-color: var(--clrGbHeader);
+    color: var(--clrPrimary1);
+    margin-right: 1.5em;
+
+    
+
+}
+
+.header-buttons button:hover{
+    color: var(--clrPrimaryBase);
+    box-shadow: inset 0px -6px var(--clrPrimaryBase);
+
+}
