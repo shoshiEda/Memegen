@@ -13,6 +13,7 @@ header{
 
 .logo{
     color: var(--clrPrimary2);
+    font-family: montserrat;
     margin-left: 1.5em;
 
 
@@ -21,6 +22,7 @@ header{
 
 .header-buttons button{
     height: 4.5em;
+    font-family: montserrat;
     border: none;
     background-color: var(--clrGbHeader);
     color: var(--clrPrimary1);
