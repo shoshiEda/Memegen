@@ -1,5 +1,6 @@
 'use strict'
 
+const STORAGE_KEY = 'imgDB'
 var gImgs = []
 var gMeme = {
  selectedImgId: 5,
@@ -13,6 +14,7 @@ var gMeme = {
  ]
 }
 var gKeywordSearchCountMap = {'funny': 12,'cat': 16, 'baby': 2}
+var gFilterBy=''
 
 
 
@@ -36,3 +38,13 @@ gImgs = [
 {id: 17, url: 'img/17.jpg', keywords: ['men','politision']},
 {id: 18, url: 'img/18.jpg', keywords: ['cartoon']},
 ]
+
+
+function getImges(){
+
+    var imges = gImgs
+    if(gFilterBy)
+    imges = gImgs.filter(img =>
+        img.keywords.includes(gFilterBy))
+        return imges
+    }

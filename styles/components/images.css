@@ -1,0 +1,23 @@
+
+.images{
+    background-color: #E3E3E3;
+    
+
+}
+
+
+.images img{
+    height:10em;
+    margin-left: 0.3em;
+ 
+}
+
+.images img:hover{
+    opacity: 50%;
+}
+
+
+
+.filter-by{
+    margin: 1em;
+}

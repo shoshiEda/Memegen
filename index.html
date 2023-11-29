@@ -10,26 +10,47 @@
 
 </head>
 <body onload="onInit()">
-    <header>
-        <h1 class="logo">memegen</h1>
-        <section class="header-buttons">
-        <button>Gallery</button>
-        <button>About</button>
-    </section>
+    <header class="main-header main-layout full">
+        <div class=" flex space-between align-center">
+            <div class="logo">memegen</div>
+            <nav class="main-nav">
+                <ul class="main-nav-list flex clean-list">
+                    <li><a class="flex justify-center align-center" href="#">Galery</a></li>
+                    <li><a class="flex justify-center align-center" href="#">About</a></li>   
+                </ul>
+            </nav>
+            <button class="btn-toggle-menu" onclick="toggleMenu()"><i class="fa-solid fa-bars"></i></button>
+        </div>
     </header>
-    <section class="imges"></section>
+    <div class="filter-by">
+        <select onchange="onSetFilterBy()">
+            <option value="">Select Filtering</option>
+            <option value="men">men</option>
+            <option value="baby">baby</option>
+            <option value="animals">animals</option>
+            <option value="dog">dog</option>
+            <option value="cat">cat</option>
+            <option value="politision">politision</option>
+            <option value="tv">tv</option>
+            <option value="cartoon">cartoon</option>
+
+        </select>
+        </div>
+    <section class="images">
+        
+    </section>
     <section class="draw hide"></section>
     <section class="galery hide"></section>
-    <section cless="about"> 
+    <div class="about"> 
         <img src="/img/profile.jpg">
-        <p> Hi, I am Shoshi Eda,from Hadera, Isreal, I studied at Cpding Acadamy and I made this app</p>
+        <p> Hi, I am Shoshi Eda,from Hadera, Isreal, I studied at Coding Acadamy and I made this app</p>
    
         <nav class="links">
         <a href="https://www.linkedin.com/public-profile/settings"><i class="fa-brands fa-linkedin"></i></a>
         <a href="https://www.facebook.com/profile.php?id=1791913788"><i class="fa-brands fa-square-facebook"></i></a>
         <a href="https://github.com/shoshiEda/Memegen"><i class="fa-brands fa-square-github"></i></a> 
         </nav>
-    </section>
+    </div>
     <footer> 
         <h1 class="logo">memegen</h1>
         <p>all rights reserved 2023</p>
