@@ -27,8 +27,9 @@
         left: 0;
         width: 100%;
         display: grid;
-        grid-template-rows: 0fr;
+        grid-template-rows:0fr;
         overflow: hidden;
+        z-index: 10;
         transition: grid-template-rows 1s;
         align-items: end;
     }
@@ -44,8 +45,15 @@
         border-bottom: 1px solid #ccc;
     }
 
-    body.menu-open .main-nav {
+    .menu-open {
         grid-template-rows: 1fr;
+        background-color: aqua;
+        overflow:visible;
+
+    }
+
+    .draw{
+        flex-direction: column;
     }
 }
 

@@ -2,6 +2,8 @@
 
 
 function onInit(){
+    const elSection=document.querySelector('.draw')
+    elSection.classList.add('hide')
     renderImges()
     
 }
@@ -13,7 +15,7 @@ function renderImges()
     var strHtml=''
     for(var i=0;i<images.length;i++)
     {
-     strHtml += `<img src="${images[i].url}">`
+     strHtml += `<img class="${i}" onclick="renderDrawing(this)" src="${images[i].url}">`
 
     }
     
@@ -27,5 +29,6 @@ function onSetFilterBy() {
 }
 
 function toggleMenu() {
-    document.body.classList.toggle('.menu-open')
+    var elheader=document.querySelector('body')
+    elheader.classList.add('.menu-open')
 }

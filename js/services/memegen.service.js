@@ -48,3 +48,9 @@ function getImges(){
         img.keywords.includes(gFilterBy))
         return imges
     }
+
+function getImg(num)
+{
+    const images=getImges()
+    return images[num].url
+}

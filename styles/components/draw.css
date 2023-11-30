@@ -1,0 +1,38 @@
+
+.draw{
+    display: flex;
+}
+
+canvas {
+    background-color: white;
+    border: 1px solid black;
+    margin: 1em;
+  }
+
+.tool-bar{
+   
+    background-color:var(--clrBgimages) ;
+    text-align: center;
+    align-self: center;
+    padding: 2em;
+    gap:1em;
+    border: 0.0625em solid black;
+}
+
+
+.btn-imlimentor{
+    background-color: var(--clrBgHeader);
+    color:var(--clrPrimary2);
+    border-bottom:none;
+    font-size: 1em;
+    border-radius: 0.5em;   
+}
+
+.tool-bar a{
+    padding: 0.2em;
+    text-decoration: none;
+}
+
+.tool-bar button{
+    margin-top: 1em;
+}

@@ -22,12 +22,13 @@
             <button class="btn-toggle-menu" onclick="toggleMenu()"><i class="fa-solid fa-bars"></i></button>
         </div>
     </header>
+    <section class="main">
     <div class="filter-by">
         <select onchange="onSetFilterBy()">
             <option value="">Select Filtering</option>
             <option value="men">men</option>
             <option value="baby">baby</option>
-            <option value="animals">animals</option>
+            <option value="animal">animal</option>
             <option value="dog">dog</option>
             <option value="cat">cat</option>
             <option value="politision">politision</option>
@@ -36,11 +37,33 @@
 
         </select>
         </div>
-    <section class="images">
-        
+    <div class="images"></div>
+</section>
+    <section class="draw hide">
+        <canvas width="400" height="400"></canvas>
+        <div class="tool-bar">
+            <input type="text" oninput="onSetText(this.value)" />  
+        </br>
+            <button><i class="fa-solid fa-arrow-up"></i><i class="fa-solid fa-arrow-down"></i></button> 
+            <button><i class="fa-solid fa-plus"></i></button> 
+            <button><i class="fa-solid fa-trash"></i></button> 
+        </br>
+            <button>A+</button> 
+            <button>A-</button> 
+            <button><i class="fa-solid fa-align-left"></i></button> 
+            <button><i class="fa-solid fa-align-justify"></i></button> 
+            <button><i class="fa-solid fa-align-right"></i></button> 
+        </br>  
+            <button><i class="fa-solid fa-font"></i></button> 
+            <button><i class="fa-solid fa-palette"></i></button> 
+        </br>   
+            <button class="btn-imlimentor" onclick="onUploadImg()">share on facebook</button> 
+            <a href="#" class="btn-imlimentor" onclick="downloadCanvas(this)">save</a> 
+        </div>
     </section>
-    <section class="draw hide"></section>
-    <section class="galery hide"></section>
+    <section class="galery hide">
+        <h1>dhnkjdvfnjknd</h1>
+    </section>
     <div class="about"> 
         <img src="/img/profile.jpg">
         <p> Hi, I am Shoshi Eda,from Hadera, Isreal, I studied at Coding Acadamy and I made this app</p>
@@ -55,9 +78,11 @@
         <h1 class="logo">memegen</h1>
         <p>all rights reserved 2023</p>
     </footer>
+    <script src="js/sharing-on-fasebook.js"></script>
     <script src="js/services/util.service.js"></script>
     <script src="js/services/storage.service.js"></script>
     <script src="js/services/memegen.service.js"></script>
+    <script src="js/memegen.canvas.js"></script>
     <script src="js/memegen.controller.js"></script>
 </body>
 </html>
