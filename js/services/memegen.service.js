@@ -3,13 +3,16 @@
 const STORAGE_KEY = 'imgDB'
 var gImgs = []
 var gMeme = {
- selectedImgId: 5,
+ selectedImgId: 0,
  selectedLineIdx: 0,
+ emojiSize:30,
+ emoji:'',
  lines: [
  {
- txt: 'I sometimes eat Falafel',
+ txt: '',
  size: 20,
- color: 'red'
+ color: 'white',
+ align: 'center'
  }
  ]
 }
@@ -54,3 +57,18 @@ function getImg(num)
     const images=getImges()
     return images[num].url
 }
+
+function createNewLine(){
+   const newLine={txt:'',color:'white',size:20,align:'center'}
+    gMeme.lines.push(newLine)
+}
+
+function initgMeme(){
+    gMeme.lines=[]
+    createNewLine()
+    gMeme.selectedLineIdx= 0
+    gMeme.emojiSize=30
+    gMeme.emoji=''
+}
+
+

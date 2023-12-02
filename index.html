@@ -15,7 +15,8 @@
             <div class="logo">memegen</div>
             <nav class="main-nav">
                 <ul class="main-nav-list flex clean-list">
-                    <li><a class="flex justify-center align-center" href="#">Galery</a></li>
+                    <button onclick="onInit()"><li><a class="flex justify-center align-center" href="#">Mems</a></li></button>
+                    <button onclick="onGalery()"><li><a class="flex justify-center align-center" href="#">Galery</a></li></button>
                     <li><a class="flex justify-center align-center" href="#">About</a></li>   
                 </ul>
             </nav>
@@ -40,29 +41,35 @@
     <div class="images"></div>
 </section>
     <section class="draw hide">
-        <canvas width="400" height="400"></canvas>
-        <div class="tool-bar">
-            <input type="text" oninput="onSetText(this.value)" />  
+        <canvas class="hide" width="400" height="400"></canvas>
+        <div class="tool-bar hide id="tool-bar">
+            <input class="text-box" type="text" oninput="onSetText(this.value)" />  
         </br>
-            <button><i class="fa-solid fa-arrow-up"></i><i class="fa-solid fa-arrow-down"></i></button> 
-            <button><i class="fa-solid fa-plus"></i></button> 
-            <button><i class="fa-solid fa-trash"></i></button> 
+            <button><i class="fa-solid fa-arrow-up" onclick="changeline()"></i><i class="fa-solid fa-arrow-down"></i></button> 
+            <button><i class="fa-solid fa-plus" onclick="addLine()"></i></button> 
+            <button><i class="fa-solid fa-trash" onclick="onDelete()"></i></button> 
         </br>
-            <button>A+</button> 
-            <button>A-</button> 
-            <button><i class="fa-solid fa-align-left"></i></button> 
-            <button><i class="fa-solid fa-align-justify"></i></button> 
-            <button><i class="fa-solid fa-align-right"></i></button> 
+            <button onclick="changeFont('+')">A+</button> 
+            <button onclick="changeFont('-')">A-</button> 
+            <button onclick="changeAlign(1)"><i class="fa-solid fa-align-left"></i></button> 
+            <button onclick="changeAlign(0)"><i class="fa-solid fa-align-justify"></i></button> 
+            <button onclick="changeAlign(-1)"><i class="fa-solid fa-align-right"></i></button> 
+        </br>  
+
+            <button onclick="addImogi(this)">🤣</button> 
+            <button onclick="addImogi(this)">😎</button> 
+            <button onclick="addImogi(this)">😭</button> 
         </br>  
             <button><i class="fa-solid fa-font"></i></button> 
-            <button><i class="fa-solid fa-palette"></i></button> 
+            <button onclick="onColor()">        <input class="color" type="color" id="color" name="color" form="tool-bar" id="color"/>
+                <i class="fa-solid fa-palette"></i></button> 
         </br>   
             <button class="btn-imlimentor" onclick="onUploadImg()">share on facebook</button> 
             <a href="#" class="btn-imlimentor" onclick="downloadCanvas(this)">save</a> 
         </div>
     </section>
     <section class="galery hide">
-        <h1>dhnkjdvfnjknd</h1>
+        <h1>There aren't saved mems at the Galery</h1>
     </section>
     <div class="about"> 
         <img src="/img/profile.jpg">
@@ -82,7 +89,8 @@
     <script src="js/services/util.service.js"></script>
     <script src="js/services/storage.service.js"></script>
     <script src="js/services/memegen.service.js"></script>
-    <script src="js/memegen.canvas.js"></script>
     <script src="js/memegen.controller.js"></script>
+    <script src="js/memegen.canvas.js"></script>
+    <script src="js/memegen.canvas-gen.js"></script>
 </body>
 </html>

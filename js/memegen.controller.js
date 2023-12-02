@@ -2,12 +2,31 @@
 
 
 function onInit(){
-    const elSection=document.querySelector('.draw')
+    const elSection=document.querySelector('.tool-bar')
     elSection.classList.add('hide')
+   const elCanvas=document.querySelector('canvas')
+    elCanvas.classList.add('hide')
+    const elGalery=document.querySelector('.galery')
+    elGalery.classList.add('hide')
+    const elMain=document.querySelector('.main')
+    elMain.classList.remove('hide')
+    //addListeners()
+    initgMeme()
+
     renderImges()
     
 }
 
+function onGalery(){
+    const elSection=document.querySelector('.tool-bar')
+    elSection.classList.add('hide')
+   const elCanvas=document.querySelector('canvas')
+    elCanvas.classList.add('hide')
+    const elMain=document.querySelector('.main')
+    elMain.classList.add('hide')
+    const elGalery=document.querySelector('.galery')
+    elGalery.classList.remove('hide')
+}
 
 function renderImges()
 {
@@ -15,7 +34,7 @@ function renderImges()
     var strHtml=''
     for(var i=0;i<images.length;i++)
     {
-     strHtml += `<img class="${i}" onclick="renderDrawing(this)" src="${images[i].url}">`
+     strHtml += `<img class="img${i}" onclick="renderDrawing(this)" src="${images[i].url}">`
 
     }
     
@@ -29,6 +48,6 @@ function onSetFilterBy() {
 }
 
 function toggleMenu() {
-    var elheader=document.querySelector('body')
-    elheader.classList.add('.menu-open')
+    document.body.classList.toggle('menu-open')
 }
+
