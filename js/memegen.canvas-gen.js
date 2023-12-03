@@ -10,32 +10,37 @@ function drawRect(x1,y1,x2,y2) {
 
 
 
-function onSetText(text){
-    //console.log(text)
+function onSetText(text,line){
+    
+    if(!line)  line=gMeme.selectedLineIdx
     renderImg()
     var txtHeight
-    if(!gMeme.selectedLineIdx) txtHeight=40
-    else if(gMeme.selectedLineIdx===1) txtHeight=360
+    if(!line) txtHeight=40
+    else if(line===1) txtHeight=360
     else txtHeight=200
     gCtx.lineWidth = 3
-    gCtx.strokeStyle = gMeme.lines[gMeme.selectedLineIdx].color
-    gCtx.fillStyle = gMeme.lines[gMeme.selectedLineIdx].color
-    gCtx.font = `${gMeme.lines[gMeme.selectedLineIdx].size}px Arial`
-    gCtx.textAlign = gMeme.lines[gMeme.selectedLineIdx].align
+    gCtx.strokeStyle = gMeme.lines[line].color
+    gCtx.fillStyle = gMeme.lines[line].color
+    gCtx.font = `${gMeme.lines[line].size}px Arial`
+    gCtx.textAlign = gMeme.lines[line].align
     gCtx.textBaseline = 'middle'
     gCtx.fillText(text, getAlign(), txtHeight)
     gCtx.strokeText(text, getAlign(),txtHeight)
-    gMeme.lines[gMeme.selectedLineIdx].txt=text
+    gMeme.lines[line].txt=text
+    
     
 }
 
 function renderImg() {
     var elBtn=document.querySelector(`.img${gMeme.selectedImgId}`)
-    //console.log(elBtn)
     gCtx.drawImage(elBtn, 0, 0, gElCanvas.width, gElCanvas.height)
     if(gMeme.emoji)    addImogi('',gMeme.emoji)
     drawRect(20, 20, 360, 40)
     if(gMeme.lines.length>1) drawLines()
+    gMeme.lines.map((line, idx) => {
+        console.log(line.txt,idx)
+        //onSetText(line.txt,idx)
+        })
     
 }
 
@@ -46,6 +51,7 @@ function onDelete()
     drawRect(20, 20, 360, 40)
     gMeme.selectedLineIdx=0
     initgMeme()
+    renderImg()
 }
 
 
@@ -91,20 +97,17 @@ function changeline(){
 
 
 function addLine(){
-    saveLine()
+    
+    renderImg()
     if(gMeme.lines.length===1)    drawRect(20,340,360, 40)
     else drawRect(20,180,360, 40)
     gMeme.selectedLineIdx++
     createNewLine()
+    renderImg()
     
 }
 
-function saveLine(){
-    renderImg()
-    for(var i=0;i<gMeme.lines.length;i++)
-            if(gMeme.lines[i].txt)
-                onSetText(gMeme.lines[i].txt)
-}
+
 
 function drawLines(){
     if(gMeme.lines.length===2)    drawRect(20,340,360, 40)
@@ -131,5 +134,5 @@ window.addEventListener('submit', (ev) => {
 function onSubmit(ev) { 
     const elcolor = document.getElementById('color')
     gMeme.lines[gMeme.selectedLineIdx].color=elcolor.value
-    onSetText(gMeme.lines[gMeme.selectedLineIdx].txt)
+    onSetText(gMeme.lines[gMeme.selectedLineIdx].txt,gMeme.selectedLineIdx)
 }

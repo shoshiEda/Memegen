@@ -76,3 +76,4 @@ function setImgFilter(filterBy){
     if (filterBy !== undefined) gFilterBy = filterBy
     return gFilterBy
 }
+
