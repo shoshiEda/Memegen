@@ -15,9 +15,9 @@
             <div class="logo">memegen</div>
             <nav class="main-nav">
                 <ul class="main-nav-list flex clean-list">
-                    <button onclick="onInit()"><li><a class="flex justify-center align-center" href="#">Mems</a></li></button>
-                    <button onclick="onGalery()"><li><a class="flex justify-center align-center" href="#">Galery</a></li></button>
-                    <li><a class="flex justify-center align-center" href="#">About</a></li>   
+                    <button onclick="onInit()"><li><a class="flex justify-center align-center" href="#">Galery</a></li></button>
+                    <button onclick="onGalery()"><li><a class="flex justify-center align-center" href="#">Saved</a></li></button>
+                    <button onclick="onAbout()"><li><a class="flex justify-center align-center" href="#">About</a></li> </button>  
                 </ul>
             </nav>
             <button class="btn-toggle-menu" onclick="toggleMenu()"><i class="fa-solid fa-bars"></i></button>
@@ -25,54 +25,52 @@
     </header>
     <section class="main">
     <div class="filter-by">
-        <select onchange="onSetFilterBy()">
-            <option value="">Select Filtering</option>
-            <option value="men">men</option>
-            <option value="baby">baby</option>
-            <option value="animal">animal</option>
-            <option value="dog">dog</option>
-            <option value="cat">cat</option>
-            <option value="politision">politision</option>
-            <option value="tv">tv</option>
-            <option value="cartoon">cartoon</option>
+        <span data-trans="Search">Search by:</span>
+        <input type="text" placeholder="Enter a catagory" oninput="onSetFilterBy(this.value)" /> 
+        <select onchange="onSetFilterBySelect()">
+            
 
         </select>
         </div>
     <div class="images"></div>
 </section>
-    <section class="draw hide">
+    <section class="draw">
         <canvas class="hide" width="400" height="400"></canvas>
         <div class="tool-bar hide id="tool-bar">
-            <input class="text-box" type="text" oninput="onSetText(this.value)" />  
+            <input class="text-box" type="text" placeholder="Enter the text here" oninput="onSetText(this.value)" />  
         </br>
-            <button><i class="fa-solid fa-arrow-up" onclick="changeline()"></i><i class="fa-solid fa-arrow-down"></i></button> 
-            <button><i class="fa-solid fa-plus" onclick="addLine()"></i></button> 
-            <button><i class="fa-solid fa-trash" onclick="onDelete()"></i></button> 
+            <button onclick="changeline()" title="Switch line"><i class="fa-solid fa-arrows-up-down"></i></button> 
+            <button><i class="fa-solid fa-plus" onclick="addLine()" title="Add line"></i></button> 
+            <button><i class="fa-solid fa-trash" onclick="onDelete()" title="Delete"></i></button> 
         </br>
-            <button onclick="changeFont('+')">A+</button> 
-            <button onclick="changeFont('-')">A-</button> 
-            <button onclick="changeAlign(1)"><i class="fa-solid fa-align-left"></i></button> 
-            <button onclick="changeAlign(0)"><i class="fa-solid fa-align-justify"></i></button> 
-            <button onclick="changeAlign(-1)"><i class="fa-solid fa-align-right"></i></button> 
+            <button onclick="changeFont('+')" title="Increase font-size">A+</button> 
+            <button onclick="changeFont('-')" title="Decrease font-size">A-</button> 
+            <button onclick="changeAlign(1)" title="Align font to the right"><i class="fa-solid fa-align-left"></i></button> 
+            <button onclick="changeAlign(0)" title="Align font to the center"><i class="fa-solid fa-align-justify"></i></button> 
+            <button onclick="changeAlign(-1)" title="Align font to the left"><i class="fa-solid fa-align-right"></i></button> 
         </br>  
 
             <button onclick="addImogi(this)">🤣</button> 
             <button onclick="addImogi(this)">😎</button> 
             <button onclick="addImogi(this)">😭</button> 
         </br>  
-            <button><i class="fa-solid fa-font"></i></button> 
-            <button onclick="onColor()">        <input class="color" type="color" id="color" name="color" form="tool-bar" id="color"/>
-                <i class="fa-solid fa-palette"></i></button> 
+        <form id="frmRegister" onsubmit="onSubmit(event)">
+           <input class="color" type="color" title="Choose color" form="frmRegister" value="#ff0000" id="color"/> 
+           <button class="btn-color">></button>  
+        </form>        
         </br>   
-            <button class="btn-imlimentor" onclick="onUploadImg()">share on facebook</button> 
-            <a href="#" class="btn-imlimentor" onclick="downloadCanvas(this)">save</a> 
+            <button class="btn-imlimentor" onclick="onUploadImg()">Share on facebook</button> 
+            <a href="#" class="btn-imlimentor" onclick="SaveHere()">Save</a> 
+            <a href="#" class="btn-imlimentor" onclick="downloadToDevice(this)" download="my-img.jpg">Download</a>
+ 
+
         </div>
     </section>
-    <section class="galery hide">
+    <section class="saved hide">
         <h1>There aren't saved mems at the Galery</h1>
     </section>
     <div class="about"> 
-        <img src="/img/profile.jpg">
+        <img src="./img/profile.jpg">
         <p> Hi, I am Shoshi Eda,from Hadera, Isreal, I studied at Coding Acadamy and I made this app</p>
    
         <nav class="links">

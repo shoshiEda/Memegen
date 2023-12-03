@@ -10,13 +10,13 @@ var gMeme = {
  lines: [
  {
  txt: '',
- size: 20,
+ size: 30,
  color: 'white',
  align: 'center'
  }
  ]
 }
-var gKeywordSearchCountMap = {'funny': 12,'cat': 16, 'baby': 2}
+var gKeywordSearchCount = ['Baby','Animal','Dog','Cat','Politision','TV','Cartoon']
 var gFilterBy=''
 
 
@@ -59,7 +59,7 @@ function getImg(num)
 }
 
 function createNewLine(){
-   const newLine={txt:'',color:'white',size:20,align:'center'}
+   const newLine={txt:'',color:'white',size:30,align:'center'}
     gMeme.lines.push(newLine)
 }
 
@@ -72,3 +72,7 @@ function initgMeme(){
 }
 
 
+function setImgFilter(filterBy){
+    if (filterBy !== undefined) gFilterBy = filterBy
+    return gFilterBy
+}

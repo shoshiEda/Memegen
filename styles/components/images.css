@@ -1,15 +1,12 @@
 
 .images{
-    background-color: #E3E3E3;
-    
-
+   text-align: center;
 }
-
 
 .images img{
     height:10em;
     margin-left: 0.3em;
- 
+    border-radius: 0.5em;
 }
 
 .images img:hover{
@@ -20,4 +17,20 @@
 
 .filter-by{
     margin: 1em;
+    margin-left: 2em;
+
+}
+
+.filter-by select{
+    padding: 0.2em;
+    border-radius: 0.4em;
+    background-color:var(--clrBgHeader) ;
+    color: var(--clrPrimary2);
+    font-weight: bold;
+
+}
+
+.filter-by input{
+    padding: 0.2em;
+    border-radius: 0.4em;
 }

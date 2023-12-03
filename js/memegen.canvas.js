@@ -12,6 +12,8 @@ function renderDrawing(elbtn){
 
     const elSection=document.querySelector('.main')
     elSection.classList.add('hide')
+    const elAbout=document.querySelector('.about')
+    elAbout.classList.add('hide')
     const elNewSection=document.querySelector('.tool-bar')
     elNewSection.classList.remove('hide')
 
@@ -24,11 +26,10 @@ function renderDrawing(elbtn){
     console.log(elbtn)
     gMeme.selectedImgId=elbtn.classList[0][3]
    
-    const elToolBar=document.querySelector('.tool-bar')
-    elToolBar.style.width=gElCanvas.width+'px;'
-    elToolBar.style.height=gElCanvas.height+'px;'
+    
     //console.log(gElCanvas.width+'px;')
     drawRect(20, 20, 360, 40)
+    onSetText('The text is here')
 }
 
 function downloadCanvas(elLink) {

@@ -20,7 +20,7 @@
     color: inherit;
     text-decoration: none;
     background-color:var(--clrBgHeader);
-
+  
   
     transition: all 0.4s;
   }
@@ -49,4 +49,5 @@
     font-weight: bolder;
     font-family: montserrat;
     font-size: 1em;
+    margin-right: 1em;
   }

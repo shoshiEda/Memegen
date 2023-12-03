@@ -1,5 +1,6 @@
 
 footer{
+    margin-block-start: 0.625em;
     background-color: var(--clrBgHeader);
     color: var(--clrPrimary1);
     text-align: center;
@@ -11,3 +12,8 @@ footer .logo{
     color: var(--clrPrimary2);
 
 }
+
+  footer p {
+    margin: unset;
+  }
+  

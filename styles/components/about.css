@@ -17,6 +17,11 @@
 }
 
 .about .links{
+    text-align: center;
+
+}
+
+.about .links i{
     color: var(--clrBgHeader);
     font-size: 1.5em;
 }

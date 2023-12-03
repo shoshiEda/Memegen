@@ -1,21 +1,27 @@
 
 .draw{
     display: flex;
+    justify-content: center;
+    gap: 1.5em;
+    margin-top: 2em;
 }
 
 canvas {
     background-color: white;
     border: 1px solid black;
     margin: 1em;
+    
   }
 
 .tool-bar{
    
+    height: 20em;
+    width: 20em;
     background-color:var(--clrBgimages) ;
     text-align: center;
     align-self: center;
     padding: 2em;
-    gap:1em;
+    gap:2em;
     border: 0.0625em solid black;
 }
 
@@ -24,15 +30,56 @@ canvas {
     background-color: var(--clrBgHeader);
     color:var(--clrPrimary2);
     border-bottom:none;
-    font-size: 1em;
-    border-radius: 0.5em;   
+    font-size: 1.3em;
+    border-radius: 0.5em; 
+    margin-bottom: 0.5em; 
+    margin-top: 0; 
+    padding: 0.1em;
+    border: 1px solid darkgrey;
+    box-shadow: 3px 3px darkgrey;
+}
+
+.btn-imlimentor:hover{
+    cursor: pointer;
+    opacity: 50%;
 }
 
 .tool-bar a{
-    padding: 0.2em;
     text-decoration: none;
+    margin-left: 0.5em;
 }
 
-.tool-bar button{
-    margin-top: 1em;
+.tool-bar input{
+   
+    margin-bottom: 1em;
+    font-size: 1em;
+
 }
+
+.tool-bar button:not(.btn-imlimentor, .btn-color){
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    height: 2.5em;
+    width: 2.5em;
+    background-color: aliceblue;
+    border-radius: 0.3em;
+    font-size: 1em;
+    margin-left: 0.7em;
+    box-shadow: 3px 3px darkgrey;
+    border: none;
+
+}
+
+.tool-bar button:hover{
+    cursor: pointer;
+    opacity: 50%;
+}
+
+  .btn-color{
+    height:2em;
+    width: 2em;
+    background-color: aliceblue;
+    border-radius: 0.3em;
+    border: 0.1em solid darkgrey;
+  }
+

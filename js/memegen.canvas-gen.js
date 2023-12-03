@@ -45,6 +45,7 @@ function onDelete()
     gCtx.drawImage(elBtn, 0, 0, gElCanvas.width, gElCanvas.height)
     drawRect(20, 20, 360, 40)
     gMeme.selectedLineIdx=0
+    initgMeme()
 }
 
 
@@ -119,6 +120,16 @@ function addImogi(elBtn){
         gCtx.strokeText(elBtn.innerText, getAlign(), 200)
         gMeme.emoji=elBtn.innerText
     }
-    else gCtx.strokeText(gMeme.emoji, getAlign(), 200)
-    
+    else gCtx.strokeText(gMeme.emoji, getAlign(), 200)   
+}
+
+
+window.addEventListener('submit', (ev) => {
+    ev.preventDefault()
+})
+
+function onSubmit(ev) { 
+    const elcolor = document.getElementById('color')
+    gMeme.lines[gMeme.selectedLineIdx].color=elcolor.value
+    onSetText(gMeme.lines[gMeme.selectedLineIdx].txt)
 }
